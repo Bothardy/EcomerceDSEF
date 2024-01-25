@@ -17,7 +17,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from store.views.home import  home
-
+from store.views.auth import  auth
 
 
 
@@ -25,6 +25,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', home, name='home.html'),
     path('', include('store.urls')),  # Include your app's URLs
+    path('auth/', auth, name='auth.html')
 
 
 
