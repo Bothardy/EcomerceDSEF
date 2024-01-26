@@ -17,13 +17,13 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from store.views.login import Login
-
+from store.views.inscription import Signup
 
 
 urlpatterns = [
 
     path('login', Login.as_view(), name='login.html'),
+    path('inscription', Signup.as_view(), name='inscription.html'),
 
 
 ]
-

@@ -2,11 +2,11 @@ from django.db import models
 
 
 class Customer(models.Model):
-    fname = models.CharField(max_length=50)
-    lname = models.CharField(max_length=50)
-    phone = models.CharField(max_length=10)
+    fname = models.CharField(blank=True,max_length=50)
+    phone = models.CharField(blank=True,max_length=10)
+    adresse = models.CharField(blank=True, max_length=500)
     email = models.EmailField()
-    username = models.CharField(max_length=50)
+    username = models.CharField(blank=True,max_length=50)
     password = models.CharField(max_length=100)
 
     def register(self):
