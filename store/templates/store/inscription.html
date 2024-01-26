@@ -21,7 +21,7 @@
     <input type="checkbox" id="chk" aria-hidden="true">
 
     <div class="signup">
-        <form action="/inscription" method="POST">
+        <form action="store/inscription" method="POST">
             {% csrf_token %}
             {% if error%}
             <div class="alert alert-danger" role="alert">
