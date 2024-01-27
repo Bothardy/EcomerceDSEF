@@ -19,6 +19,8 @@ from django.urls import path, include
 from store.views.login import Login
 from store.views.inscription import Signup
 from .views.add_to_cart import add_to_cart
+from django.contrib.auth.views import LogoutView
+
 
 urlpatterns = [
 
@@ -27,6 +29,8 @@ urlpatterns = [
 
     # other URL patterns
     path('add_to_cart/<int:product_id>/', add_to_cart, name='add_to_cart'),
+    path("logout/", LogoutView.as_view(), name="logout"),
+
 ]
 
 

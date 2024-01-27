@@ -51,7 +51,15 @@
             <ul class="header-links pull-right">
                 {% if request.session.Customer %}
                 <h1 style="color: white;">Hello, {{ customer_name }}! 🌟</h1>
-                <li><a href="/logout"><i class="fa fa-user-o"></i> Logout</a></li>
+                <form method="post" action="{% url 'logout' %}">
+                    {% csrf_token %}
+                    <li>
+                        <button type="submit" class="btn btn-link logout-button">
+                            <i class="fa fa-user-o"></i> Logout
+                        </button>
+                    </li>
+                </form>
+
 
                 {% else %}
                 <li><a href="{% url 'login.html' %}"><i class="fa fa-sign-in" aria-hidden="true"></i> Login </a></li>

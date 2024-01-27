@@ -10,6 +10,8 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     BASE_DIR / "static",
 ]
+#Note: You need to mention LOGOUT_REDIRECT_URL = "my_url" in settings.py for redirection after logout.
+LOGOUT_REDIRECT_URL = "home.html"
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
