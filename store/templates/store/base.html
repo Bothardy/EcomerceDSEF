@@ -49,9 +49,17 @@
                 <li><a href="#"><i class="fa fa-map-marker"></i> {{product.price}} </a></li>
             </ul>
             <ul class="header-links pull-right">
-                <li><a href="#"><i class="fa fa-dollar"></i> USD</a></li>
-                <li><a href="{% url 'login.html' %}"><i class="fa fa-user-o"></i> My Account</a></li>
-                   <li><a href="{% url 'inscription.html' %}"><i class="fa fa-user-o"></i> Signup</a></li>
+                  {% if request.session.Customer %}
+                  <h1 style="color: white;">Hello, {{ customer_name }}! 🌟</h1>
+                  <li><a  href="/logout"><i class="fa fa-user-o"></i> Logout</a></li>
+
+                   {% else %}
+                 <li><a href="{% url 'login.html' %}"><i class="fa fa-sign-in" aria-hidden="true"></i> Login </a></li>
+                 <li><a href="{% url 'inscription.html' %}"><i class="fa fa-user-o"></i> Signup</a></li>
+
+
+                {% endif %}
+
 
 
             </ul>

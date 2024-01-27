@@ -1,16 +1,30 @@
-from django.shortcuts import render , redirect , HttpResponseRedirect
-from store.models.Product import Product,Category
-from django.views import View
+from django.shortcuts import render
+from store.models import Product, Customer
 
+def get_products():
+    # Fetch all products from the database
+    return Product.objects.all()
 
-# Create your views here.
+def get_customer_name(request):
+    # Retrieve the customer ID from the session
+    customer_id = request.session.get('Customer')
+
+    # Fetch the customer object if the ID exists
+    customer = None
+    if customer_id:
+        try:
+            customer = Customer.objects.get(pk=customer_id)
+        except Customer.DoesNotExist:
+            # Handle the case where the customer does not exist
+            pass
+
+    return customer.fname if customer else None
 
 def home(request):
-    # Fetch the first product from the database (you can modify this logic based on your needs)
-    product = Product.objects.all()
-    category = Category.objects.all()
+    # Get products and customer name
+    product = get_products()
+    customer_name = get_customer_name(request)
 
-    return render(request, 'store/home.html', {'product': product, 'category': category})
-
-
-
+    # Pass the customer's name and products to the template
+    context = {'product': product, 'customer_name': customer_name}
+    return render(request, 'store/home.html', context)
