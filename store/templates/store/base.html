@@ -49,17 +49,16 @@
                 <li><a href="#"><i class="fa fa-map-marker"></i> {{product.price}} </a></li>
             </ul>
             <ul class="header-links pull-right">
-                  {% if request.session.Customer %}
-                  <h1 style="color: white;">Hello, {{ customer_name }}! 🌟</h1>
-                  <li><a  href="/logout"><i class="fa fa-user-o"></i> Logout</a></li>
+                {% if request.session.Customer %}
+                <h1 style="color: white;">Hello, {{ customer_name }}! 🌟</h1>
+                <li><a href="/logout"><i class="fa fa-user-o"></i> Logout</a></li>
 
-                   {% else %}
-                 <li><a href="{% url 'login.html' %}"><i class="fa fa-sign-in" aria-hidden="true"></i> Login </a></li>
-                 <li><a href="{% url 'inscription.html' %}"><i class="fa fa-user-o"></i> Signup</a></li>
+                {% else %}
+                <li><a href="{% url 'login.html' %}"><i class="fa fa-sign-in" aria-hidden="true"></i> Login </a></li>
+                <li><a href="{% url 'inscription.html' %}"><i class="fa fa-user-o"></i> Signup</a></li>
 
 
                 {% endif %}
-
 
 
             </ul>
@@ -77,7 +76,7 @@
                 <div class="col-md-3">
                     <div class="header-logo">
                         <a href="#" class="logo">
-                            <img src="{% static 'website/img/logo.png' %}"  alt="">
+                            <img src="{% static 'website/img/logo.png' %}" alt="">
                         </a>
                     </div>
                 </div>
@@ -117,7 +116,7 @@
                                 <div class="cart-list">
                                     <div class="product-widget">
                                         <div class="product-img">
-                                            <img src="{% static 'website/img/product01.png' %}"  alt="">
+                                            <img src="{% static 'website/img/product01.png' %}" alt="">
                                         </div>
                                         <div class="product-body">
                                             <h3 class="product-name"><a href="#">product name goes here</a></h3>
@@ -128,7 +127,7 @@
 
                                     <div class="product-widget">
                                         <div class="product-img">
-                                            <img src="{% static 'website/img/product01.png' %}"  alt="">
+                                            <img src="{% static 'website/img/product01.png' %}" alt="">
                                         </div>
                                         <div class="product-body">
                                             <h3 class="product-name"><a href="#">product name goes here</a></h3>
@@ -178,12 +177,9 @@
             <!-- NAV -->
             <ul class="main-nav nav navbar-nav">
                 <li class="active"><a href="#">Home</a></li>
-                <li><a href="#">Hot Deals</a></li>
-                <li><a href="#">Categories</a></li>
                 <li><a href="#">Laptops</a></li>
                 <li><a href="#">Smartphones</a></li>
-                <li><a href="#">Cameras</a></li>
-                <li><a href="#">Accessories</a></li>
+
             </ul>
             <!-- /NAV -->
         </div>

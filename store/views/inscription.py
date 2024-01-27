@@ -10,12 +10,19 @@ class Signup(View):
 
     def post(self, request):
         postData = request.POST
+        fname = postData.get('fname')
+        adresse = postData.get('adresse')
+        phone = postData.get('password')
 
         email = postData.get('email')
         username = postData.get('username')
         password = postData.get('password')
         # validation
         value = {
+
+            'fname': fname,
+            'adresse': adresse,
+            'phone': phone,
 
             'username': username,
             'email': email,
@@ -32,7 +39,7 @@ class Signup(View):
             print(username, email, password)
             customer.password = make_password(customer.password)
             customer.register()
-            return redirect('home.html')
+            return redirect('login.html')
         else:
             data = {
                 'error': error_message,
