@@ -1,41 +1,26 @@
-"""
-URL configuration for EcomerceDSEF project.
 
-The `urlpatterns` list routes URLs to views. For more information please see:
-    https://docs.djangoproject.com/en/4.2/topics/http/urls/
-Examples:
-Function views
-    1. Add an import:  from my_app import views
-    2. Add a URL to urlpatterns:  path('', views.home, name='home')
-Class-based views
-    1. Add an import:  from other_app.views import Home
-    2. Add a URL to urlpatterns:  path('', Home.as_view(), name='home')
-Including another URLconf
-    1. Import the include() function: from django.urls import include, path
-    2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
-"""
-from django.contrib import admin
+
 from django.urls import path, include
 from store.views.login import Login
 from store.views.inscription import Signup
 
 from django.contrib.auth.views import LogoutView
-from store.views.Cartview import  add_to_cart,show_cart
-
-
-
+from store.views.Cartview import add_to_cart, show_cart
+from store.views.Order import place_order, order_detail
 urlpatterns = [
 
     path('login', Login.as_view(), name='login.html'),
     path('inscription', Signup.as_view(), name='inscription.html'),
 
     # other URL patterns
-    path('add_to_cart/<int:product_id>/', add_to_cart, name='add_to_cart'),
+
     path("logout/", LogoutView.as_view(), name="logout"),
 
+    path('add_to_cart/<int:product_id>/', add_to_cart, name='add_to_cart'),
+
     path('show_cart/', show_cart, name='show_cart'),
+    path('place_order/', place_order, name='place_order'),
+    path('order/<int:order_id>/', order_detail, name='order_detail'),
+
 
 ]
-
-
-

@@ -2,6 +2,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
+
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -44,7 +46,7 @@
     <div id="top-header">
         <div class="container">
             <ul class="header-links pull-left">
-                <li><a href="#"><i class="fa fa-phone"></i> +021-95-51-84</a></li>
+                <li><a href=" "><i class="fa fa-phone"></i> +021-95-51-84</a></li>
                 <li><a href="#"><i class="fa fa-envelope-o"></i> email@email.com</a></li>
                 <li><a href="#"><i class="fa fa-map-marker"></i> {{product.price}} </a></li>
             </ul>
@@ -54,10 +56,23 @@
                 <form method="post" action="{% url 'logout' %}">
                     {% csrf_token %}
                     <li>
-                        <button type="submit" class="btn btn-link logout-button">
-                            <i class="fa fa-user-o"></i> Logout
+                        <button type="submit" class="btn btn-link logout-button"><i class="fa fa-user-o"></i>
+                            Logout
                         </button>
                     </li>
+                    <!-- home.html -->
+                    <!-- home.html -->
+                    <li class="nav-item dropdown">
+                        <select class="form-select" onchange="window.location.href=this.value">
+                            <option value="" selected disabled>My Orders</option>
+                            {% for order in orders %}
+                            <option value="{% url 'order_detail' order_id=order.id %}">Order ID: {{ order.id }}</option>
+                            {% endfor %}
+                        </select>
+                    </li>
+
+
+
                 </form>
 
 
@@ -127,7 +142,7 @@
                                             <img src="{% static 'website/img/product01.png' %}" alt="">
                                         </div>
                                         <div class="product-body">
-                                            <h3 class="product-name"><a href="#">product name goes here</a></h3>
+                                            <h3 class="product-name"><a href="#">ADVERTISE ...</a></h3>
                                             <h4 class="product-price"><span class="qty">1x</span>$980.00</h4>
                                         </div>
                                         <button class="delete"><i class="fa fa-close"></i></button>
@@ -137,7 +152,7 @@
                                 </div>
                                 <div class="cart-summary">
                                     <small>3 Item(s) selected</small>
-                                    <h5>SUBTOTAL: $2940.00</h5>
+                                    <h5>SUBTOTAL: $2940.00 Coming Soon</h5>
                                 </div>
                                 <div class="cart-btns">
                                     <a href="{% url 'show_cart' %}">View Cart</a>

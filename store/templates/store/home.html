@@ -8,6 +8,7 @@
 
 
 <!-- SECTION -->
+
 <div class="section">
     <!-- container -->
     <div class="container">
@@ -17,6 +18,20 @@
             <div id="aside" class="col-md-3">
                 <!-- aside Widget -->
                 <div class="aside">
+                       <h3 class="aside-title">Coming soon .....</h3>
+                        <h1>Orders List</h1>
+
+  <!-- home.html -->
+<ul>
+    {% for order in orders %}
+        <li>
+            Order ID: {{ order.id }}<br>
+            Customer: {{ order.customer }}<br>
+            Created At: {{ order.created_at }}<br>
+            <!-- Add more fields for debugging -->
+        </li>
+    {% endfor %}
+</ul>
                     <h3 class="aside-title">Categories</h3>
                     <div class="checkbox-filter">
 
@@ -100,8 +115,10 @@
                 <!-- aside Widget -->
 
                 <!-- aside Widget -->
+
+
                 <div class="aside">
-                    <h3 class="aside-title">Top selling</h3>
+                    <h3 class="aside-title">Top selling Coming Soon ... </h3>
                     <div class="product-widget">
                         <div class="product-img">
                             <img src="{% static 'website/img/product01.png' %}" alt="">

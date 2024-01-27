@@ -56,7 +56,8 @@
                                class="shop-tooltip float-none text-light"
                                title
                                data-original-title="Clear cart"><i
-                                    class="ino ion-md-trash"></i></a>CLEAR</th>
+                                    class="ino ion-md-trash"></i></a>CLEAR
+                        </th>
                     </tr>
                     </thead>
                     <tbody>
@@ -114,7 +115,12 @@
                 <button type="button" class="btn btn-lg btn-default md-btn-flat mt-2 mr-3">
                     <a href="{% url 'home.html' %}" class="text-decoration-none">Back to shopping</a>
                 </button>
-                <button type="button" class="btn btn-lg btn-primary mt-2">Order now</button>
+                <form method="post" action="{% url 'place_order' %}">
+                    {% csrf_token %}
+                    <input type="hidden" name="order_id" value="{{ order.id }}">
+                    <button type="submit" class="btn btn-lg btn-primary mt-2">Order now</button>
+                </form>
+
             </div>
         </div>
     </div>
