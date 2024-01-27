@@ -18,12 +18,15 @@ from django.contrib import admin
 from django.urls import path, include
 from store.views.login import Login
 from store.views.inscription import Signup
-
+from .views.add_to_cart import add_to_cart
 
 urlpatterns = [
 
     path('login', Login.as_view(), name='login.html'),
     path('inscription', Signup.as_view(), name='inscription.html'),
 
-
+    # other URL patterns
+    path('add_to_cart/<int:product_id>/', add_to_cart, name='add_to_cart'),
 ]
+
+

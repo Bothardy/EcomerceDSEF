@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from store.models import Product, Customer
+from store.models import Product, Customer,CartItem
 
 def get_products():
     # Fetch all products from the database
@@ -24,7 +24,9 @@ def home(request):
     # Get products and customer name
     product = get_products()
     customer_name = get_customer_name(request)
+    cart_item_count = CartItem.objects.filter(cart__client_id=request.session.get('Customer')).count()
+
 
     # Pass the customer's name and products to the template
-    context = {'product': product, 'customer_name': customer_name}
+    context = {'product': product, 'customer_name': customer_name,'cart_item_count': cart_item_count}
     return render(request, 'store/home.html', context)
