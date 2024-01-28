@@ -33,6 +33,7 @@
     vertical-align: middle;
 }
     </style>
+
 </head>
 <body>
 <div class="container px-3 my-5 clearfix">
@@ -115,11 +116,19 @@
                 <button type="button" class="btn btn-lg btn-default md-btn-flat mt-2 mr-3">
                     <a href="{% url 'home.html' %}" class="text-decoration-none">Back to shopping</a>
                 </button>
-                <form method="post" action="{% url 'place_order' %}">
+               {% if request.GET.viewcart == 'yes' %}
+
+
+
+
+                {% else %}
+                  <form method="post" action="{% url 'create_payment' %}">
                     {% csrf_token %}
                     <input type="hidden" name="order_id" value="{{ order.id }}">
-                    <button type="submit" class="btn btn-lg btn-primary mt-2">Order now</button>
+                    <button type="submit" class="btn btn-lg btn-primary mt-2">Pay with PayPal</button>
                 </form>
+                {% endif %}
+
 
             </div>
         </div>

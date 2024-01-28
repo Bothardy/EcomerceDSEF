@@ -20,7 +20,7 @@ def place_order(request):
     # cart_items.delete()
 
     # Redirect to a page showing the order details or a thank you page
-    return redirect('home.html')
+    return redirect('http://127.0.0.1:8000/show_cart/')
 
 # views.py
 

@@ -113,8 +113,8 @@
                         <form>
                             <select class="input-select">
                                 <option value="0">All Categories</option>
-                                <option value="1">Category 01</option>
-                                <option value="1">Category 02</option>
+                                <option value="1">laptop</option>
+                                <option value="2">smarphone</option>
                             </select>
                             <input class="input" placeholder="Search here">
                             <button class="search-btn">Search</button>
@@ -152,19 +152,21 @@
 
 
                                 </div>
-                                <div class="cart-summary">
-                                    <small> Item(s) selected</small>
-                                    <h5>SUBTOTAL: Coming Soon</h5>
-                                </div>
+
                                 <div class="cart-btns">
-                                    <a href="{% url 'show_cart' %}">View Cart</a>
-                                    <a href="#">Checkout <i class="fa fa-arrow-circle-right"></i></a>
-                                    <form action="{% url 'show_cart' %}" method="post">
+
+                                   <a href="{% url 'show_cart' %}?viewcart=yes">View Cart</a>
+
+                                    <a id="checkout-link" href="#" class="btn btn-link btn-lg mt-2">Checkout <i
+                                            class="fa fa-arrow-circle-right"></i></a>
+                                    <form id="checkout-form" method="post" action="{% url 'place_order' %}"
+                                          class="d-inline">
                                         {% csrf_token %}
-                                        <button type="submit" class="add-to-cart-btn">
-                                            <i class="fa fa-shopping-cart"></i> Checkout
-                                        </button>
+                                        <input type="hidden" name="order_id" value="{{ order.id }}">
+
                                     </form>
+
+
                                 </div>
                             </div>
                         </div>
@@ -323,6 +325,14 @@
 <script src="{% static 'website/js/nouislider.min.js' %}"></script>
 <script src="{% static 'website/js/jquery.zoom.min.js' %}"></script>
 <script src="{% static 'website/js/main.js' %}"></script>
-
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script>
+    $(document).ready(function () {
+        // Submit the form when the link is clicked
+        $('#checkout-link').click(function () {
+            $('#checkout-form').submit();
+        });
+    });
+</script>
 </body>
 </html>

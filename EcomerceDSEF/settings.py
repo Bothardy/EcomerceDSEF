@@ -12,6 +12,11 @@ STATICFILES_DIRS = [
 ]
 #Note: You need to mention LOGOUT_REDIRECT_URL = "my_url" in settings.py for redirection after logout.
 LOGOUT_REDIRECT_URL = "home.html"
+
+
+PAYPAL_CLIENT_ID = 'AfCh0Y82mWRxAZGMNOR1mnvCE4mS_OVtgJm0nwV6Y4VNhh0p3lefuuwM3BneJoCzIwiTIsSIfj_aqi0E'
+PAYPAL_SECRET = 'EHdJrITY7p_y5yxNj0h82jNDKywydy_NojFsWyKCEjUD0koCLbLWvytNR2gTPPJCo_XHVSAg9yiAMgtq'
+
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
