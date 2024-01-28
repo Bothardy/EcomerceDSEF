@@ -8,6 +8,7 @@ def place_order(request):
     # Fetch the cart items for the current customer
     cart_items = CartItem.objects.filter(cart__client_id=customer_id)
 
+
     # Create a new order for the customer
     order = Order.objects.create(customer_id=customer_id)
 

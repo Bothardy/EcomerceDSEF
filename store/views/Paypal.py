@@ -4,7 +4,9 @@ import paypalrestsdk
 from django.conf import settings
 from django.shortcuts import render, redirect
 from django.urls import reverse
-
+from django.shortcuts import render, redirect
+from store.models.Cart import Order, CartItem
+from django.shortcuts import render, get_object_or_404
 paypalrestsdk.configure({
     "mode": "sandbox",  # Change to "live" for production
     "client_id": settings.PAYPAL_CLIENT_ID,
@@ -44,6 +46,7 @@ def execute_payment(request):
     payment = paypalrestsdk.Payment.find(payment_id)
 
     if payment.execute({"payer_id": payer_id}):
+
         return render(request, 'store/paypal/payment_success.html')
     else:
         return render(request, 'store/paypal/payment_failed.html')
