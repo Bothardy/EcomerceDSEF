@@ -63,8 +63,7 @@
                             Logout
                         </button>
                     </li>
-                    <!-- home.html -->
-                    <!-- home.html -->
+
                     <li class="nav-item dropdown">
                         <select class="form-select" onchange="window.location.href=this.value">
                             <option value="" selected disabled>My Orders</option>
@@ -74,7 +73,7 @@
                         </select>
                     </li>
 
-
+                     <li><a href="{% url 'customer_profil' %}"><i class="fa fas fa-user"></i> Profil </a></li>
                 </form>
 
 
@@ -155,7 +154,7 @@
 
                                 <div class="cart-btns">
 
-                                   <a href="{% url 'show_cart' %}?viewcart=yes">View Cart</a>
+                                    <a href="{% url 'show_cart' %}?viewcart=yes">View Cart</a>
 
                                     <a id="checkout-link" href="#" class="btn btn-link btn-lg mt-2">Checkout <i
                                             class="fa fa-arrow-circle-right"></i></a>
