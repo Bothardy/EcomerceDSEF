@@ -32,9 +32,11 @@
                 {{error}}
             </div>
             {% endif %}
+
             <label for="chk" aria-hidden="true">Edit profil {{ customer.username}}! 🌟</label>
 
             <div>
+
 
                 <input type="text" name="fname"
                        id="" value="{{values.fname}}" class="form-control form-control-sm"
@@ -63,7 +65,7 @@
                        placeholder="{{customer.password}}">
             </div>
             <button type="submit">Sauvgarder</button>
-          <li><a href="{% url 'home.html' %}"><i class="fa fa-user-o"></i>New Client ? Register</a></li>
+                                      <li><a href="{% url 'home.html' %}"><i class="fa fa-user-o"></i>back to Home</a></li>
 
 
         </form>
