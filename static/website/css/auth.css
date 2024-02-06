@@ -30,7 +30,7 @@ label{
 	font-size: 2.3em;
 	justify-content: center;
 	display: flex;
-	margin: 20px;
+	margin: 30px;
 	font-weight: bold;
 	cursor: pointer;
 	transition: .5s ease-in-out;
@@ -87,4 +87,30 @@ button:hover{
 }
 #chk:checked ~ .signup label{
 	transform: scale(.6);
+}
+
+.button-x {
+    position: absolute;
+    top: 5px;
+    right: 15px;
+    color: white;
+    font-size: 15px;
+    border: none;
+    cursor: pointer;
+    padding: 5px 10px;
+    text-align: center;
+
+}
+
+.button_x {
+    position: absolute;
+    top: 17px;
+    right: 10px;
+    color: #573b8a;
+    font-size: 17px;
+    border: none;
+    cursor: pointer;
+    padding: 5px 10px;
+    text-align: center;
+
 }

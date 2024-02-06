@@ -39,6 +39,8 @@
                 {{error}}
             </div>
             {% endif %}
+            <a href="{% url 'home.html' %}" class="button_x ">X</a>
+            <div>
             <label for="chk" aria-hidden="true">Login</label>
             <input required type="email" name="email" id=""
                    value="{{values.email}}"
