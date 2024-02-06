@@ -113,8 +113,8 @@
                         <div class="product-body">
                             <p class="product-category">Category</p>
                             <h3 class="product-name"><a href="#">product name goes here</a></h3>
-                            <h4 class="product-price">$980.00
-                                <del class="product-old-price">$990.00</del>
+                            <h4 class="product-price">MAD 980.00
+                                <del class="product-old-price">MAD 990.00</del>
                             </h4>
                         </div>
                     </div>
@@ -126,8 +126,8 @@
                         <div class="product-body">
                             <p class="product-category">Category</p>
                             <h3 class="product-name"><a href="#">product name goes here</a></h3>
-                            <h4 class="product-price">$980.00
-                                <del class="product-old-price">$990.00</del>
+                            <h4 class="product-price">MAD980.00
+                                <del class="product-old-price">MAD990.00</del>
                             </h4>
                         </div>
                     </div>
@@ -139,8 +139,8 @@
                         <div class="product-body">
                             <p class="product-category">Category</p>
                             <h3 class="product-name"><a href="#">product name goes here</a></h3>
-                            <h4 class="product-price">$980.00
-                                <del class="product-old-price">$990.00</del>
+                            <h4 class="product-price">MAD980.00
+                                <del class="product-old-price">MAD990.00</del>
                             </h4>
                         </div>
                     </div>
@@ -171,8 +171,8 @@
                             <div class="product-body">
                                 <p class="product-category">{{ product.category }}</p>
                                 <h3 class="product-name"><a href="#">{{ product.name }}</a></h3>
-                                <h4 class="product-price">${{product.price}}
-                                    <del class="product-old-price">$990.00</del>
+                                <h4 class="product-price">MAD{{product.price}}
+                                    <del class="product-old-price">MAD9900.00</del>
                                 </h4>
                                 <div class="product-rating">
                                     <i class="fa fa-star"></i>
@@ -185,7 +185,9 @@
 
 
                                     </button>
+                                    <a href="{% url 'product_detail' pk=product.pk %}" class="quick-view-link">
                                     <button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">quick view</span>
+                                    </a>
                                     </button>
                                 </div>
                             </div>

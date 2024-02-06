@@ -1,7 +1,7 @@
 from django.urls import path, include
 from store.views.login import Login
 from store.views.inscription import Signup
-from store.views.home import products_by_category
+from store.views.home import products_by_category ,  product_detail
 from django.contrib.auth.views import LogoutView
 from store.views.Cartview import add_to_cart, show_cart
 from store.views.Order import place_order, order_detail
@@ -35,4 +35,5 @@ urlpatterns = [
     path('execute_payment/', execute_payment, name='execute_payment'),
     path('payment_failed/', payment_failed, name='payment_failed'),
 
+    path('product/<int:pk>/', product_detail, name='product_detail'),
 ]

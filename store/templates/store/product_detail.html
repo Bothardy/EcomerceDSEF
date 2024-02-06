@@ -1,0 +1,54 @@
+{% extends 'store/base.html' %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ecommerce project group</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'website/css/product_detail.css' %}"/>
+  </head>
+
+
+  {% block content %}
+  <div class="main-container">
+    <div class="product-container">
+      <div class="image-container">
+        <img src="{{ product.image.url }}" alt="image">
+      </div>
+
+      <div class="product-details">
+        <div class="name-container">
+          <h1>{{ product.name }}</h1>
+        </div>
+        <div id="descriptionContainer" class="description-container">
+          <p id="descriptionText">{{ product.description }}</p>
+        </div>
+        <div class="price-container">
+          <p class="price-text">Price: MAD {{ product.price }}</p>
+        </div>
+        <div class="category-container">
+          <p>Category: {{ product.category }}</p>
+        </div>
+        <div class="brand-container">
+          <p>Quantity:{{product.stock}} </p>
+        </div>
+        <div class="button-container">
+          <a href="{% url 'add_to_cart' product_id=product.id %}" class="add-to-cart-btn">
+            <button type="submit"><i class="fa fa-shopping-cart"></i> add to cart</button>
+          </a>
+        
+          <a href="{% url 'home.html' %}" class="add-to-cart-btn">
+            <button type="submit"><i class="fa fa-arrow-circle-left"></i> return</button>
+          </a>
+        </div>
+        
+
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+{% endblock %}
