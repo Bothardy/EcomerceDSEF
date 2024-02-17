@@ -12,6 +12,11 @@ class Customer(models.Model):
     def register(self):
         self.save()
 
+    def update(self, **kwargs):
+        for field, value in kwargs.items():
+            setattr(self, field, value)
+        self.save()
+
     @staticmethod
     def get_customer_by_email(email):
         try:
@@ -26,4 +31,4 @@ class Customer(models.Model):
         return False
 
     def __str__(self):
-        return self.username
+        return f"{self.fname} {self.phone} {self.adresse} {self.email} {self.username}"

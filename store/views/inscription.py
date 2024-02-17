@@ -12,7 +12,7 @@ class Signup(View):
         postData = request.POST
         fname = postData.get('fname')
         adresse = postData.get('adresse')
-        phone = postData.get('password')
+        phone = postData.get('phone')
 
         email = postData.get('email')
         username = postData.get('username')
@@ -23,16 +23,19 @@ class Signup(View):
             'fname': fname,
             'adresse': adresse,
             'phone': phone,
-
             'username': username,
             'email': email,
             'password': password
         }
         error_message = None
 
-        customer = Customer(username=username,
-                            email=email,
-                            password=password)
+        customer = Customer(
+            fname=fname,
+            adresse=adresse,
+            phone=phone,
+            username=username,
+            email=email,
+            password=password)
         error_message = False
 
         if not error_message:

@@ -6,7 +6,7 @@ from django.contrib.auth.views import LogoutView
 from store.views.Cartview import add_to_cart, show_cart
 from store.views.Order import place_order, order_detail
 from store.views.Paypal import payment_checkout, create_payment, execute_payment, payment_failed
-from store.views.profil import get_customer_profil
+from store.views.profil import get_customer_profil,updatec
 
 urlpatterns = [
 
@@ -14,6 +14,7 @@ urlpatterns = [
     path("logout/", LogoutView.as_view(), name="logout"),
     path('inscription', Signup.as_view(), name='inscription.html'),
     path('profil/', get_customer_profil, name='customer_profil'),
+    path('update_profil', updatec.as_view(), name='update_profil'),
 
     # other URL patterns
 
