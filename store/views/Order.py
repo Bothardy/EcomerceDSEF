@@ -35,6 +35,9 @@ def order_detail(request, order_id):
     try:
         order = Order.objects.get(pk=order_id)
         order_items = CartItem.objects.filter(cart__client=order.customer)
+        livraisonStatus = order.livraisonStatus
+
+
 
     except Order.DoesNotExist:
         print(f"Order with ID {order_id} does not exist.")
@@ -47,6 +50,8 @@ def order_detail(request, order_id):
     context = {
         'order': order,
         'order_items': order_items,
+        'order_items': order_items,
+        'livraisonStatus': livraisonStatus,
 
     }
 
