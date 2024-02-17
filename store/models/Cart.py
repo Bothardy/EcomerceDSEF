@@ -25,7 +25,7 @@ class CartItem(models.Model):
 class Order(models.Model):
     customer = models.ForeignKey(Customer, on_delete=models.CASCADE)
     created_at = models.DateTimeField(auto_now_add=True)
-    livraisonStatus=models.CharField(blank=True,max_length=10)
+    livraisonStatus=models.CharField(blank=True,max_length=10,default="not deivred")
 
     def __str__(self):
         return f"Order for {self.customer.username}"
