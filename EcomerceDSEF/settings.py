@@ -81,7 +81,7 @@ WSGI_APPLICATION = 'EcomerceDSEF.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'ecomerce',
+        'NAME': 'eco',
         'USER': 'root',
         'PASSWORD': 'root',
         'HOST': '127.0.0.1',  # or the hostname where your MySQL server is running
